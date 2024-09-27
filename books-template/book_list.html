@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Library</h1>
+        <a href="add_book.html" class="btn btn-primary add-book">Add Book</a>
+        <ol>
+            {% for book in books %}
+                <li>
+                    <span class="book-title"><a href="{% url 'books:book_detail' pk=book.pk %}">{{ book.title }}</a></span>
+                </li>
+            {% endfor %}
+        </ol>
+    </div>
+    <footer>
+        <p>Powered by <a href="https://www.linkedin.com/in/zuhra-erkayeva/">Zuhra Erkayeva</a></p>
+    </footer>
+    <script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>
